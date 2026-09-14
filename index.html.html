@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASH-HIS Screen | Sistem Skrining Kesehatan Abu Vulkanik</title>
+  <!-- Google Fonts & Tailwind CSS CDN -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- HEADER / NAVBAR -->
+  <header class="bg-gradient-to-r from-red-900 via-rose-900 to-slate-900 text-white shadow-md sticky top-0 z-50">
+    <div class="max-w-4xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div>
+        <h1 class="text-xl font-bold tracking-tight text-red-100">ASH-HIS Screen</h1>
+        <p class="text-xs text-red-200 opacity-90">Ash Exposure Health and Immune-response Screening • Jawa Barat</p>
+      </div>
+      <span class="bg-red-950/70 border border-red-700/50 text-red-200 text-xs px-3 py-1 rounded-full font-medium">
+        Hematoimmunology System (HIS)
+      </span>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-4xl mx-auto px-4 py-8 flex-grow w-full">
+
+    <!-- HERO / EDUTAINMENT BANNER -->
+    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 mb-8">
+      <div class="flex items-start gap-4">
+        <div class="p-3 bg-red-100 text-red-700 rounded-xl hidden sm:block">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+        </div>
+        <div>
+          <h2 class="text-lg font-semibold text-slate-900">Instrumen Skrining Dampak Paparan Abu Vulkanik</h2>
+          <p class="text-sm text-slate-600 mt-1 leading-relaxed">
+            Alat pemantauan awal untuk menilai tingkat paparan abu vulkanik (&lt;10 µm) dan respons klinis imun-inflamasi saluran napas serta mukosa masyarakat di wilayah terdampak Jawa Barat.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM SKRINING -->
+    <form id="ashForm" class="space-y-6">
+
+      <!-- STEP 1: IDENTITAS & FAKTOR RISIKO -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80">
+        <h3 class="text-base font-bold text-slate-900 flex items-center gap-2 mb-4 border-b border-slate-100 pb-3">
+          <span class="w-6 h-6 rounded-full bg-red-700 text-white text-xs flex items-center justify-center font-bold">1</span>
+          Profil Responden & Faktor Risiko Individu
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Nama Lengkap / Inisial</label>
+            <input type="text" id="nama" required placeholder="Contoh: Ahmad N." class="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-700 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Wilayah / Kabupaten di Jabar</label>
+            <input type="text" id="wilayah" required placeholder="Contoh: Garut / Sumedang / Bandung" class="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-700 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Kelompok Rentan / Komorbid</label>
+            <select id="komorbid" class="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-700 focus:outline-none">
+              <option value="0">Tidak Ada / Dewasa Sehat</option>
+              <option value="2">Lansia (&gt;60 thn) / Anak-anak</option>
+              <option value="2">Ibu Hamil</option>
+              <option value="3">Memiliki Penyakit Respirasi (Asma/PPOK)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Penggunaan Alat Pelindung (Masker)</label>
+            <select id="masker" class="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-700 focus:outline-none">
+              <option value="0">Selalu Menggunakan Masker N95/Medis</option>
+              <option value="1">Kadang-kadang / Masker Kain</option>
+              <option value="2">Tidak Pernah Menggunakan Masker</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2: RIWAYAT PAPARAN ABU VULKANIK -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80">
+        <h3 class="text-base font-bold text-slate-900 flex items-center gap-2 mb-4 border-b border-slate-100 pb-3">
+          <span class="w-6 h-6 rounded-full bg-red-700 text-white text-xs flex items-center justify-center font-bold">2</span>
+          Riwayat & Intensitas Paparan Abu
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Durasi Paparan Lapangan</label>
+            <select id="durasi" class="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-700 focus:outline-none">
+              <option value="1">&lt; 1 Jam per hari</option>
+              <option value="2">1 - 4 Jam per hari</option>
+              <option value="3">&gt; 4 Jam / Beraktivitas luar ruangan terus-menerus</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Intensitas Ketebalan Abu di Sekitar</label>
+            <select id="intensitas" class="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-700 focus:outline-none">
+              <option value="1">Tipis (Tampak samar di permukaan benda)</option>
+              <option value="2">Sedang (Debu beterbangan jelas & menutupi jalan)</option>
+              <option value="3">Sangat Pekat (Jarak pandang terbatas & abu tebal)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3: PEMETAAN GEJALA IMPLIKASI INFLAMASI -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80">
+        <h3 class="text-base font-bold text-slate-900 flex items-center gap-2 mb-2 border-b border-slate-100 pb-3">
+          <span class="w-6 h-6 rounded-full bg-red-700 text-white text-xs flex items-center justify-center font-bold">3</span>
+          Gejala & Manifestasi Klinis
+        </h3>
+        <p class="text-xs text-slate-500 mb-4">Pilih gejala yang dialami beberapa jam hingga beberapa hari setelah paparan abu:</p>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <label class="flex items-center p-3 border border-slate-200 rounded-xl hover:bg-slate-50 cursor-pointer transition-colors">
+            <input type="checkbox" name="gejala" value="2" class="w-4 h-4 text-red-700 rounded border-slate-300 focus:ring-red-700">
+            <span class="ml-3 text-xs font-medium text-slate-700">Batuk Kering / Berdahak</span>
+          </label>
+
+          <label class="flex items-center p-3 border border-slate-200 rounded-xl hover:bg-slate-50 cursor-pointer transition-colors">
+            <input type="checkbox" name="gejala" value="1" class="w-4 h-4 text-red-700 rounded border-slate-300 focus:ring-red-700">
+            <span class="ml-3 text-xs font-medium text-slate-700">Pilek / Hidung Tersumbat</span>
+          </label>
+
+          <label class="flex items-center p-3 border border-slate-200 rounded-xl hover:bg-slate-50 cursor-pointer transition-colors">
+            <input type="checkbox" name="gejala" value="2" class="w-4 h-4 text-red-700 rounded border-slate-300 focus:ring-red-700">
+            <span class="ml-3 text-xs font-medium text-slate-700">Iritasi Tenggorokan / Nyeri Menelan</span>
+          </label>
+
+          <label class="flex items-center p-3 border border-slate-200 rounded-xl hover:bg-slate-50 cursor-pointer transition-colors">
+            <input type="checkbox" name="gejala" value="4" class="w-4 h-4 text-red-700 rounded border-slate-300 focus:ring-red-700">
+            <span class="ml-3 text-xs font-medium text-slate-700">Sesak Napas / Dada Terasa Berat</span>
+          </label>
+
+          <label class="flex items-center p-3 border border-slate-200 rounded-xl hover:bg-slate-50 cursor-pointer transition-colors">
+            <input type="checkbox" name="gejala" value="2" class="w-4 h-4 text-red-700 rounded border-slate-300 focus:ring-red-700">
+            <span class="ml-3 text-xs font-medium text-slate-700">Iritasi Mata (Merah/Perih/Gatal)</span>
+          </label>
+
+          <label class="flex items-center p-3 border border-slate-200 rounded-xl hover:bg-slate-50 cursor-pointer transition-colors">
+            <input type="checkbox" name="gejala" value="1" class="w-4 h-4 text-red-700 rounded border-slate-300 focus:ring-red-700">
+            <span class="ml-3 text-xs font-medium text-slate-700">Tubuh Lemah / Malaise Sistemik</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- SUBMIT BUTTON -->
+      <button type="button" onclick="prosesSkrining()" class="w-full bg-red-800 hover:bg-red-900 text-white font-semibold py-3.5 px-6 rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        Proses Analisis Klasifikasi Risiko
+      </button>
+
+    </form>
+
+    <!-- HASIL KELUARAN SKRINING (MODAL / DISPLAY RESULT) -->
+    <div id="hasilContainer" class="hidden mt-8 bg-white rounded-2xl p-6 shadow-lg border border-slate-200 transition-all">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-4">
+        <h3 class="text-lg font-bold text-slate-900">Hasil Skrining ASH-HIS</h3>
+        <span id="badgeRisiko" class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Risiko</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200/60">
+          <p class="text-xs text-slate-500">Responden</p>
+          <p id="resNama" class="font-semibold text-slate-800 text-sm mt-0.5">-</p>
+        </div>
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200/60">
+          <p class="text-xs text-slate-500">Wilayah Skrining</p>
+          <p id="resWilayah" class="font-semibold text-slate-800 text-sm mt-0.5">-</p>
+        </div>
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200/60">
+          <p class="text-xs text-slate-500">Skor Total Paparan & Gejala</p>
+          <p id="resSkor" class="font-bold text-slate-900 text-sm mt-0.5">-</p>
+        </div>
+      </div>
+
+      <!-- REKOMENDASI TINDAK LANJUT -->
+      <div id="boxRekomendasi" class="p-5 rounded-xl mb-6 border">
+        <h4 class="font-bold text-sm mb-2 flex items-center gap-2" id="titleRekomendasi">
+          Rekomendasi Tindak Lanjut
+        </h4>
+        <p class="text-xs leading-relaxed" id="descRekomendasi">
+          -
+        </p>
+      </div>
+
+      <!-- MEKANISME PATOFISIOLOGI RINGKAS -->
+      <div class="bg-slate-900 text-slate-300 p-4 rounded-xl text-xs space-y-2">
+        <p class="font-semibold text-red-300 flex items-center gap-1">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          Catatan Patofisiologi Imun-Inflamasi:
+        </p>
+        <p class="leading-relaxed opacity-90">
+          Partikel abu vulkanik berukuran respirabel (&lt;10 µm) yang terhirup berinteraksi dengan epitel saluran napas dan sel imun bawaan, memicu aktivasi imunitas lokal & pelepasan mediator inflamasi yang melandasi gejala klinis di atas.
+        </p>
+      </div>
+      
+      <button onclick="window.print()" class="mt-4 text-xs font-semibold text-slate-600 hover:text-slate-900 flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        Cetak Hasil Skrining
+      </button>
+    </div>
+
+  </main>
+
+  <!-- FOOTER CREDIT -->
+  <footer class="bg-white border-t border-slate-200 mt-12 py-4">
+    <div class="max-w-4xl mx-auto px-4 text-center text-xs text-slate-500">
+      <p>ASH-HIS Screen • Blok Hematoimmunology System (HIS)</p>
+      <p class="mt-1 font-medium">Muhammad Keyza Althaf Pribadi (NPM: 130110260053) — Fasil 23</p>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    function prosesSkrining() {
+      const nama = document.getElementById('nama').value;
+      const wilayah = document.getElementById('wilayah').value;
+      
+      if (!nama || !wilayah) {
+        alert('Mohon isi nama dan wilayah terlebih dahulu.');
+        return;
+      }
+
+      const komorbid = parseInt(document.getElementById('komorbid').value);
+      const masker = parseInt(document.getElementById('masker').value);
+      const durasi = parseInt(document.getElementById('durasi').value);
+      const intensitas = parseInt(document.getElementById('intensitas').value);
+
+      // Hitung skor gejala checkbox
+      let skorGejala = 0;
+      let adaSesak = false;
+      const checkboxes = document.querySelectorAll('input[name="gejala"]:checked');
+      checkboxes.forEach((cb) => {
+        const val = parseInt(cb.value);
+        skorGejala += val;
+        if (val === 4) adaSesak = true; // Nilai 4 adalah sesak napas
+      });
+
+      // Total Skor
+      const totalSkor = komorbid + masker + durasi + intensitas + skorGejala;
+
+      // Klasifikasi Risiko
+      let kategori = "";
+      let bgBadge = "";
+      let textBadge = "";
+      let boxBg = "";
+      let boxBorder = "";
+      let titleText = "";
+      let descText = "";
+
+      if (totalSkor <= 5 && !adaSesak) {
+        // RISIKO RENDAH (HIJAU)
+        kategori = "Risiko Rendah (Hijau)";
+        bgBadge = "bg-emerald-100";
+        textBadge = "text-emerald-800";
+        boxBg = "bg-emerald-50";
+        boxBorder = "border-emerald-200";
+        titleText = "Rekomendasi: Edukasi & Pemantauan Mandiri";
+        descText = "Paparan abu dan manifestasi gejala tergolong ringan/minimal. Disarankan untuk membatasi aktivitas di luar ruangan, selalu menggunakan masker jika beraktivitas di area berdebu, dan melakukan pemantauan kesehatan mandiri.";
+      } else if ((totalSkor > 5 && totalSkor <= 10) && !adaSesak) {
+        // RISIKO SEDANG (KUNING)
+        kategori = "Risiko Sedang (Kuning)";
+        bgBadge = "bg-amber-100";
+        textBadge = "text-amber-800";
+        boxBg = "bg-amber-50";
+        boxBorder = "border-amber-200";
+        titleText = "Rekomendasi: Pemeriksaan Lanjutan di Puskesmas";
+        descText = "Terdapat paparan sedang dengan beberapa manifestasi iritasi mukosa atau saluran napas. Disarankan untuk berkonsultasi dengan tenaga kesehatan di puskesmas atau posko bencana terdekat untuk pemeriksaan fisik awal dan pemberian terapi simptomatik.";
+      } else {
+        // RISIKO TINGGI (MERAH)
+        kategori = "Risiko Tinggi (Merah)";
+        bgBadge = "bg-red-100";
+        textBadge = "text-red-800";
+        boxBg = "bg-red-50";
+        boxBorder = "border-red-200";
+        titleText = "Rekomendasi: Rujukan Segera ke Fasilitas Kesehatan Lanjutan";
+        descText = "Paparan tinggi dan/atau ditemukan gejala berat (seperti sesak napas) serta faktor komorbid rentan. Diperlukan penanganan dan rujukan segera ke fasilitas kesehatan untuk evaluasi respirasi mendalam dan pencegahan komplikasi inflamasi sistemik.";
+      }
+
+      // Tampilkan Hasil
+      document.getElementById('resNama').innerText = nama;
+      document.getElementById('resWilayah').innerText = wilayah;
+      document.getElementById('resSkor').innerText = totalSkor + " Poin";
+
+      const badge = document.getElementById('badgeRisiko');
+      badge.className = `px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${bgBadge} ${textBadge}`;
+      badge.innerText = kategori;
+
+      const boxRekomendasi = document.getElementById('boxRekomendasi');
+      boxRekomendasi.className = `p-5 rounded-xl mb-6 border ${boxBg} ${boxBorder}`;
+      
+      document.getElementById('titleRekomendasi').innerText = titleText;
+      document.getElementById('titleRekomendasi').className = `font-bold text-sm mb-2 flex items-center gap-2 ${textBadge}`;
+      document.getElementById('descRekomendasi').innerText = descText;
+
+      const hasilContainer = document.getElementById('hasilContainer');
+      hasilContainer.classList.remove('hidden');
+      hasilContainer.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
